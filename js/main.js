@@ -72,10 +72,18 @@ function addPersonne(prenom,nom){
 }
 
 function loadArbre(){
+	var i=0;
 	arbre = JSON.parse(localStorage["arbre"]);
 	console.log(arbre);
 	arbre.forEach(function(e){
-		$("#arbre").append(e.prenom+" "+e.nom+" ");
+		$.get("./dialog/basePersonne.html",function(data){
+		$("#arbre").append(data);
+		$("#personne").attr("id","personne"+i);
+		$("#personne"+i).find("#prenom").append(e.prenom);
+		$("#personne"+i).find("#nom").append(e.nom);
+		i++;
+		},'html');
+		
 	});
 	
 }	
