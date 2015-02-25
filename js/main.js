@@ -58,6 +58,9 @@ $('#createPersonne').click(function(){
 	$("#dialog_formPersonne").dialog('open');
 });
 
+  $(function() {
+    $( "#selectable" ).selectable();
+  });
 
 
 });
