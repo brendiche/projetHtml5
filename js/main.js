@@ -8,6 +8,10 @@ var yetVisited = localStorage['visited'];
 
     $.get('./dialog/formPersonne.html',function(data){
     		$( "#dialog_formPersonne" ).html(data);
+            $("#list-image").hide();
+            $('#buttonAvatar').click(function(){
+             $( "#list-image" ).show();
+            });
     	},'html');
 
     //création du modal premiere entrée
@@ -32,10 +36,6 @@ var yetVisited = localStorage['visited'];
 	  });
 
 
-	$("#list-image").hide();
-	console.log($("#list-image"));
-	console.log($( context ).find( list-image)); 
-
     if (yetVisited) {
         // open popup
        // localStorage['visited'] = "yes";
@@ -51,15 +51,12 @@ var yetVisited = localStorage['visited'];
     }
     
 
-//affiche la liste d'image pour pouvoir changer d'avatar
-$('#buttonAvatar').click(function(){
-	$( "#list-image" ).get(0).show();
-})
+
 
 
 $('#createPersonne').click(function(){
 	$("#dialog_formPersonne").dialog('open');
-})
+});
 
 
 
