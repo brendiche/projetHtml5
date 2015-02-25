@@ -7,7 +7,7 @@ var yetVisited = localStorage['visited'];
         },'html');
 
     $.get('./dialog/formPersonne.html',function(data){
-    		$( "#dialog_formPersonnne" ).html(data);
+    		$( "#dialog_formPersonne" ).html(data);
     	},'html');
 
     //création du modal premiere entrée
@@ -16,11 +16,14 @@ var yetVisited = localStorage['visited'];
 	      autoOpen: false,
 	      height: 300,
 	      width: 350,
-	      modal: true
+	      modal: true,
+	      close:function(event,ui){
+	      	$("#dialog_formPersonne").dialog('open');
+	      }
 	  });
 
     //création enregistrement personne
-	$("#dialog_formPersonnne").dialog({
+	$("#dialog_formPersonne").dialog({
 			  title:"Création d'une personne",
 	      autoOpen: false,
 	      height: 600,
@@ -29,8 +32,8 @@ var yetVisited = localStorage['visited'];
 	  });
 
 
-
-
+	$("#list-image").hide();
+	console.log($("#list-image"));
 
     if (yetVisited) {
         // open popup
@@ -51,6 +54,12 @@ var yetVisited = localStorage['visited'];
 $('#buttonAvatar').click(function(){
 	$( "#list-image" ).show();
 })
+
+
+$('#createPersonne').click(function(){
+	$("#dialog_formPersonne").dialog('open');
+})
+
 
 
 });
