@@ -1,15 +1,24 @@
-  <form>
-    <fieldset>
-      <label for="nom">Nom</label>
-      <input type="text" name="name" id="nom" value="" class="text ui-widget-content ui-corner-all">
+<form>
 
+	<button id="buttonAvatar" type="button" ><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=100 heigth=100></button>
+	
+	<div id="list-image"  class="img" visibility="hidden">
+		<ol id="selectable">
+		  <li class="ui-state-default"><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=100 heigth=100></li>
+		  <li class="ui-state-default"><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=100 heigth=100></li>
+		  <li class="ui-state-default">3</li>
 
+		</ol>
+	</div>
 
-      <label for="prenom">Prénom</label>
-      <input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all">
+  <div class="form-group">
+    <label for="prenom">Prénom</label>
+    <input type="text" class="form-control" id="prenom" placeholder="Entrez le prénom si t'es pas trop con">
+  </div>
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" class="form-control" id="nom" placeholder="Entrez le nom si t'es pas trop con">
+  </div>
+    <button type="submit" class="btn btn-default">OKIDOKI</button>
+</form>
 
-    
-      <!-- Allow form submission with keyboard without duplicating the dialog button -->
-      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-    </fieldset>
-  </form>
