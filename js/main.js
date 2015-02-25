@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 var yetVisited = localStorage['visited'];
     if (!yetVisited) {
         // open popup
