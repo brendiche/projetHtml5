@@ -6,16 +6,22 @@ var yetVisited = localStorage['visited'];
         localStorage['visited'] = "yes";
 
 
-        $( "#dialog-form" ).dialog({
+        $.get('./dialog/first.html',function(data){
+        	$( "#dialog" ).html(data);
+        },'html');
+
+        $( "#dialog" ).dialog({
 	      autoOpen: true,
 	      height: 300,
 	      width: 350,
-	      modal: true,
-	      
+	      modal: true	      
 	      }
 	    );
+
+	    console.log('Premiere connexion');
  
-    }
+    }else
+    console.log('déja connecté ');
 
 
 });
