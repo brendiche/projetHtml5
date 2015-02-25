@@ -8,10 +8,17 @@ var yetVisited = localStorage['visited'];
 
     $.get('./dialog/formPersonne.html',function(data){
     		$( "#dialog_formPersonne" ).html(data);
+
             $("#list-image").hide();
+
             $('#buttonAvatar').click(function(){
              $( "#list-image" ).show();
             });
+
+            $(function() {
+			    $( "#selectable" ).selectable();
+			});
+
     	},'html');
 
     //création du modal premiere entrée
@@ -58,9 +65,7 @@ $('#createPersonne').click(function(){
 	$("#dialog_formPersonne").dialog('open');
 });
 
-  $(function() {
-    $( "#selectable" ).selectable();
-  });
+  
 
 
 });

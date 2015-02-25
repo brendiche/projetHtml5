@@ -7,20 +7,16 @@
   #selectable li { margin: 3px; padding: 1px; float: left; width: 96; height: 96; text-align: center; }
   </style>
 
-	<button id="buttonAvatar" type="button" ><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=100 heigth=100></button>
+	<button id="buttonAvatar" type="button" ><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></button>
 	
 	<div id="list-image"  class="img" visibility="hidden">
 		<ol id="selectable">
-		  <li class="ui-state-default"><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
-		  <li class="ui-state-default"><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
-		  <li class="ui-state-default"><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
-		  <li class="ui-state-default"><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>		  
-		  <li class="ui-state-default"><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
-		  <li class="ui-state-default"><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>		  
-		  <li class="ui-state-default"><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
-		  <li class="ui-state-default"><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>		  
-		  <li class="ui-state-default"><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
-		  <li class="ui-state-default"><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
+		  <li class="ui-state-default" onclick='load(event)'><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
+		  <li class="ui-state-default"onclick='load(event)'><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
+		 <li class="ui-state-default" onclick='load(event)'><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
+		  <li class="ui-state-default"onclick='load(event)'><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li><li class="ui-state-default" onclick='load(event)'><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
+		  <li class="ui-state-default"onclick='load(event)'><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li><li class="ui-state-default" onclick='load(event)'><img src="./images/avatar/starlord.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
+		  <li class="ui-state-default"onclick='load(event)'><img src="./images/avatar/iron.png" alt="X" class="img-thumbnail" width=90 heigth=90></li>
 		</ol>
 	</div>
 
@@ -36,3 +32,16 @@
     <button type="submit" class="btn btn-default">OKIDOKI</button>
 </form>
 
+
+<script type="text/javascript">
+function load(event){
+
+	var image = event.target.parentNode.innerHTML;
+	console.log(image);
+	$("#buttonAvatar").html(image);
+	$("#list-image").hide();
+
+}
+
+
+</script>
