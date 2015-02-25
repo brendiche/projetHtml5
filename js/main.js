@@ -1,6 +1,8 @@
+var arbre = [];
 $(document).ready(function(){
 
-var yetVisited = localStorage['visited'];
+	var yetVisited = localStorage['visited'];
+
 
 	$.get('./dialog/first.html',function(data){
         	$( "#dialog_first" ).html(data);
@@ -14,11 +16,10 @@ var yetVisited = localStorage['visited'];
             $('#buttonAvatar').click(function(){
              $( "#list-image" ).show();
             });
-
-            $(function() {
-			    $( "#selectable" ).selectable();
-			});
-
+            $( "#selectable" ).selectable();
+            $("#addPersonne").submit(function(){
+            	addPersonne($("input:first").val());
+            })
     	},'html');
 
     //création du modal premiere entrée
@@ -43,9 +44,9 @@ var yetVisited = localStorage['visited'];
 	  });
 
 
-    if (yetVisited) {
+    if (!yetVisited) {
         // open popup
-       // localStorage['visited'] = "yes";
+        localStorage['visited'] = "yes";
 
        
         $( "#dialog_first" ).dialog('open');
@@ -54,18 +55,29 @@ var yetVisited = localStorage['visited'];
 	    console.log('Premiere connexion');
  
     }else{
+    	loadArbre();
     	console.log('déja connecté ');
     }
-    
 
+	$('#createPersonne').click(function(){
+		$("#dialog_formPersonne").dialog('open');
+	});
 
-
-
-$('#createPersonne').click(function(){
-	$("#dialog_formPersonne").dialog('open');
+	
 });
 
-  
+function addPersonne(prenom){
+	arbre[arbre.length] = prenom;
+	localStorage["arbre"] = JSON.stringify(arbre);
+}
 
+function loadArbre(){
+	arbre = JSON.parse(localStorage["arbre"]);
+	console.log(localStorage.arbre);
+	console.log(localStorage.arbre.length);
+	arbre.forEach(function(e){
+		$("#arbre").append(e);
+	});
+	
+}	
 
-});
