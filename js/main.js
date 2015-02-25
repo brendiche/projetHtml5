@@ -34,6 +34,7 @@ var yetVisited = localStorage['visited'];
 
 	$("#list-image").hide();
 	console.log($("#list-image"));
+	console.log($( context ).find( list-image)); 
 
     if (yetVisited) {
         // open popup
@@ -52,7 +53,7 @@ var yetVisited = localStorage['visited'];
 
 //affiche la liste d'image pour pouvoir changer d'avatar
 $('#buttonAvatar').click(function(){
-	$( "#list-image" ).show();
+	$( "#list-image" ).get(0).show();
 })
 
 
