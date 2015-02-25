@@ -18,7 +18,7 @@ $(document).ready(function(){
             });
             $( "#selectable" ).selectable();
             $("#addPersonne").submit(function(){
-            	addPersonne($("input:first").val());
+            	addPersonne($("input#prenom").val(),$("input#nom").val());
             })
     	},'html');
 
@@ -66,17 +66,16 @@ $(document).ready(function(){
 	
 });
 
-function addPersonne(prenom){
-	arbre[arbre.length] = prenom;
+function addPersonne(prenom,nom){
+	arbre[arbre.length] = {"prenom":prenom,"nom":nom};
 	localStorage["arbre"] = JSON.stringify(arbre);
 }
 
 function loadArbre(){
 	arbre = JSON.parse(localStorage["arbre"]);
-	console.log(localStorage.arbre);
-	console.log(localStorage.arbre.length);
+	console.log(arbre);
 	arbre.forEach(function(e){
-		$("#arbre").append(e);
+		$("#arbre").append(e.prenom+" "+e.nom+" ");
 	});
 	
 }	
